@@ -1,0 +1,121 @@
+plugins {
+    id 'com.android.application'
+}
+apply plugin: 'com.huawei.agconnect'
+
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+
+    defaultConfig {
+        applicationId "com.starstudio.projectdemo"
+        minSdkVersion 26
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        resConfigs "zh-rCN"
+        multiDexEnabled true
+    }
+
+    signingConfigs {
+        release {
+            // 签名证书
+            storeFile file("HmsDemo.jks")
+            // 密钥库口令
+            storePassword "starstudiohome"
+            // 别名
+            keyAlias "HmsDemo"
+            // 密钥口令
+            keyPassword "starstudiohome"
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.release
+            debuggable true
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    def room_version = "2.3.0"
+
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation 'androidx.navigation:navigation-fragment:2.3.0'
+    implementation 'androidx.navigation:navigation-ui:2.3.0'
+    implementation 'org.jetbrains:annotations:15.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    //noinspection GradleCompatible
+    implementation "com.android.support:support-compat:28.0.0"
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    // RxJava support for Room
+    implementation 'androidx.room:room-rxjava2:2.1.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.3'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+
+    // 官方 Glide
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    // 高斯模糊和圆角等
+    implementation 'jp.wasabeef:glide-transformations:4.0.1'
+
+    // github上圆形ImageView轮子，专门为各种头像准备
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.huawei.hms:site:6.0.0.300'
+
+    // 添加PictureSelector库
+    implementation 'io.github.lucksiege:pictureselector:v2.7.3-rc06'
+    // 编译打包依赖
+    implementation 'com.android.support:multidex:1.0.3'
+
+    implementation 'com.huawei.hms:image-vision:1.0.3.304'
+    implementation 'com.huawei.hms:image-vision-fallback:1.0.3.304'
+    implementation 'com.huawei.hms:awareness:1.0.8.301'
+    implementation 'com.huawei.hms:video-editor-ui:1.0.0.300'
+    implementation 'com.huawei.hms:ml-computer-vision-classification:2.0.1.300'
+    implementation 'com.huawei.hms:ml-computer-vision-image-classification-model:2.0.1.300'
+
+    // https://mvnrepository.com/artifact/androidx.cardview/cardview
+    implementation group: 'androidx.cardview', name: 'cardview', version: '1.0.0'
+
+    // 引入实时语音转写服务SDK
+    implementation 'com.huawei.hms:ml-computer-voice-realtimetranscription:3.0.0.301'
+
+    // Automatic speech recognition plugin.
+    implementation 'com.huawei.hms:ml-computer-voice-asr-plugin:2.2.0.300'
+
+    //3DWheelPicker
+    implementation 'com.github.yijiebuyi:3DWheelPicker:v1.1.1'
+
+    // MPAndroidChart
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    implementation 'com.huawei.hms:audiokit-player:1.3.0.300'
+
+}

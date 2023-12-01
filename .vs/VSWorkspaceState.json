@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\src",
+    "\\app\\src\\main",
+    "\\app\\src\\main\\java",
+    "\\app\\src\\main\\java\\com",
+    "\\app\\src\\main\\java\\com\\starstudio",
+    "\\app\\src\\main\\java\\com\\starstudio\\projectdemo",
+    "\\app\\src\\main\\java\\com\\starstudio\\projectdemo\\todo",
+    "\\app\\src\\main\\java\\com\\starstudio\\projectdemo\\todo\\database"
+  ],
+  "SelectedNode": "\\app\\src\\main\\java\\com\\starstudio\\projectdemo\\todo\\TODONotification.java",
+  "PreviewInSolutionExplorer": false
+}

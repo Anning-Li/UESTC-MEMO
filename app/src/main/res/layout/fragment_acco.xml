@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:baselineAligned="false" android:orientation="horizontal">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_income"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:text="本月收入"
+                android:textColor="#FF646A73"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_symbol_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="￥"
+                android:textSize="15sp"
+                android:textColor="#FF646A73"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_income_count"
+                app:layout_constraintEnd_toStartOf="@+id/tv_income_count"
+                app:layout_constraintStart_toStartOf="@+id/tv_income"
+                app:layout_constraintTop_toTopOf="@+id/tv_income_count"
+                app:layout_constraintVertical_bias="0.583" />
+
+            <TextView
+                android:id="@+id/tv_income_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:text="200.00"
+                android:textSize="20sp"
+                android:textColor="#FF646A73"
+                app:layout_constraintStart_toEndOf="@+id/tv_symbol_1"
+                app:layout_constraintTop_toBottomOf="@+id/tv_income" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_disburse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:text="本月支出"
+                android:textColor="#FF646A73"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_disburse_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:text="200.00"
+                android:textSize="20sp"
+                android:textColor="#FF646A73"
+                app:layout_constraintStart_toEndOf="@+id/tv_symbol_2"
+                app:layout_constraintTop_toBottomOf="@+id/tv_disburse" />
+
+            <TextView
+                android:id="@+id/tv_symbol_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="￥"
+                android:textColor="#FF646A73"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_disburse_count"
+                app:layout_constraintEnd_toStartOf="@+id/tv_disburse_count"
+                app:layout_constraintHorizontal_bias="0.39"
+                app:layout_constraintStart_toStartOf="@+id/tv_disburse"
+                app:layout_constraintTop_toTopOf="@+id/tv_disburse_count"
+                app:layout_constraintVertical_bias="0.583" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="#FFF4F7FA">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_acco"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="12dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

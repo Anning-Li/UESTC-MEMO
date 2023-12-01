@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/JourAddFragment"
+    android:id="@+id/nav_journal_edit"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <fragment
+        android:id="@+id/JourAddFragment"
+        android:name="com.starstudio.projectdemo.journal.fragments.AddFragment"
+        android:label="jour_add_fragment"
+        tools:layout="@layout/fragment2_add_jour" >
+
+        <action
+            android:id="@+id/action_JournalAddFragment_to_ImagePreviewFragment"
+            app:destination="@id/ImagePreviewFragment"/>
+
+        <action
+            android:id="@+id/action_JournalAddFragment_to_VideoPreviewFragment"
+            app:destination="@id/VideoPreviewFragment" />
+
+        <action
+            android:id="@+id/action_JournalAddFragment_to_AudioPreviewFragment"
+            app:destination="@id/AudioPreviewFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/AudioPreviewFragment"
+        android:name="com.starstudio.projectdemo.journal.fragments.AudioPreviewFragment"
+        android:label="audio_preview_fragment"
+        tools:layout="@layout/fragment3_preview_audio">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/VideoPreviewFragment"
+        android:name="com.starstudio.projectdemo.journal.fragments.VideoPreviewFragment"
+        android:label="video_preview_fragment"
+        tools:layout="@layout/fragment3_preview_video">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/ImagePreviewFragment"
+        android:name="com.starstudio.projectdemo.journal.fragments.ImagePreviewFragment"
+        android:label="image_preview_fragment"
+        tools:layout="@layout/fragment3_preview_imgs">
+
+        <action
+            android:id="@+id/action_ImagePreviewFragment_to_FilterFragment"
+            app:destination="@id/FilterFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/FilterFragment"
+        android:name="com.starstudio.projectdemo.journal.fragments.FilterFragment"
+        android:label="filter_fragment"
+        tools:layout="@layout/fragment3_filter">
+
+        <action
+            android:id="@+id/action_FilterFragment_backto_ImagePreviewFragment"
+            app:destination="@id/ImagePreviewFragment" />
+    </fragment>
+
+</navigation>

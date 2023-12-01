@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="15dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:padding="15dp"
+    android:orientation="vertical"
+    android:elevation="5dp">
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/avatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/logo"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="日期"
+            android:textSize="12sp"
+            android:layout_marginStart="15dp"/>
+
+        <TextView
+            android:id="@+id/week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="星期"
+            android:textSize="12sp"
+            android:layout_marginStart="10dp"/>
+
+        <ImageView
+            android:id="@+id/weather"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/weather_overcast"/>
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="地点"
+            android:textSize="12sp"
+            android:gravity="end"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/diary_card_line"/>
+
+    <TextView
+        android:id="@+id/content"
+        android:text="这里显示动态的内容"
+        android:textSize="14sp"
+        android:maxLines="5"
+        android:ellipsize="end"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <!--如果日记中含有图片的话，该RecyclerView负责展示图片-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="10dp"
+        android:id="@+id/imgs_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!--如果日记中含有视频的话，该布局负责展示视频预览图-->
+    <FrameLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/journal_video_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:foreground="#80716F6F"
+            android:id="@+id/journal_video_pre"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/journal_video_play"
+            android:src="@android:drawable/ic_media_play"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+
+        <TextView
+            android:id="@+id/journal_video_null_txt"
+            android:text="原视频已被删除或移动"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="10dp"/>
+    </FrameLayout>
+
+    <!--如果日记中含有音频的话，该布局负责展示音频-->
+    <FrameLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/journal_audio_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/iv_add_journal_audio"/>
+    </FrameLayout>
+
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/journal_audio_null_txt"-->
+<!--            android:text="原音频已被删除或移动"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textSize="14sp"-->
+<!--            android:textColor="@color/red"-->
+<!--            android:gravity="center_horizontal"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="bottom|center_horizontal"-->
+<!--            android:layout_marginBottom="10dp"/>-->
+
+<!--    </FrameLayout>-->
+</LinearLayout>
+
